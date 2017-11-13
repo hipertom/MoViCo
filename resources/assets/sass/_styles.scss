@@ -1,0 +1,74 @@
+/***********************************/
+/*              * /body            */
+/***********************************/
+body{
+  color: $col-font;
+  background-color: $elcol-bg;
+}
+
+/***********************************/
+/*              links              */
+/***********************************/
+a, a:link, a:visited{
+  color: $col-link;
+  text-decoration: none;
+  &:hover, &:active{
+    color: $col-linked;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+/***********************************/
+/*              site header        */
+/***********************************/
+.siteheading{
+  display: inline-block;
+}
+img.sitelogo{
+  width: 67px;
+  vertical-align: top;
+}
+h1.siteheading{
+  padding: 0;
+  margin: 0;
+}
+.jumbotron{
+  margin: 0;
+}
+/***********************************/
+/*              navbar             */
+/***********************************/
+.navbar-default{
+  background: none;
+  border: none;
+}
+.navbar-default .navbar-nav > .active > a{
+  background-color: $elcol-main;
+}
+
+
+/***********************************/
+/*              footer              */
+/***********************************/
+footer p{
+  text-align: center;
+  color: $col-muted;
+}
+
+@media (min-width: 768px){
+  .navbar-collapse{
+    padding: 0;
+  }
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}

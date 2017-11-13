@@ -7,14 +7,13 @@
         <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
+        @include('inc.header')
         @include('inc.navbar')
 
         <div class="container">
-            <div class="row">
-                <div class="md-col-12 content">
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
         </div>
+
+        @include('inc.footer')
     </body>
 </html>

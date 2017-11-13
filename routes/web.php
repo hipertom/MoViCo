@@ -20,9 +20,9 @@ Route::get('/home', function () {
 });
 
 Route::get('/about', function () {
-    return view('home');
+    return view('about');
 });
 
 Route::get('/contact', function () {
-    return view('home');
+    return view('contact');
 });
