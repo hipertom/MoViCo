@@ -8359,6 +8359,8 @@ button.close {
 body {
   color: #636b6f;
   background-color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 /***********************************/
@@ -8391,8 +8393,16 @@ a:visited:active {
 
 /***********************************/
 
+header {
+  background-color: #2196F3;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
 .siteheading {
   display: inline-block;
+  color: #fff;
+  font-size: 63px;
 }
 
 img.sitelogo {
@@ -8420,8 +8430,26 @@ h1.siteheading {
   border: none;
 }
 
-.navbar-default .navbar-nav > .active > a {
-  background-color: #eeeeee;
+.navbar-default .navbar-nav > a,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > a:link,
+.navbar-default .navbar-nav > a:visited {
+  background: none;
+  color: #636b6f;
+}
+
+.navbar-default .navbar-nav > a:active,
+.navbar-default .navbar-nav > a:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:link,
+.navbar-default .navbar-nav > .active > a:active,
+.navbar-default .navbar-nav > .active > a:visited,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #2196F3;
 }
 
 /***********************************/

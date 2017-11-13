@@ -4,6 +4,8 @@
 body{
   color: $col-font;
   background-color: $elcol-bg;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 /***********************************/
@@ -22,8 +24,16 @@ a, a:link, a:visited{
 /***********************************/
 /*              site header        */
 /***********************************/
+header{
+  background-color: $elcol-main;
+
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 .siteheading{
   display: inline-block;
+  color: $col-white;
+  font-size: 63px;
 }
 img.sitelogo{
   width: 67px;
@@ -43,10 +53,27 @@ h1.siteheading{
   background: none;
   border: none;
 }
-.navbar-default .navbar-nav > .active > a{
+
+.navbar-default .navbar-nav > a,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > a:link,
+.navbar-default .navbar-nav > a:visited{
+  background: none;
+  color: $col-font;
+}
+.navbar-default .navbar-nav > a:active,
+.navbar-default .navbar-nav > a:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:link,
+.navbar-default .navbar-nav > .active > a:active,
+.navbar-default .navbar-nav > .active > a:visited,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover{
+  color: $col-white;
   background-color: $elcol-main;
 }
-
 
 /***********************************/
 /*              footer              */
