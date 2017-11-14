@@ -4,25 +4,40 @@
 <div class="row">
   <div class="col-md-12">
     <h1>Contact</h1>
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="John Doe">
+
+    {!! Form::open(['url' => 'contact/submit']) !!}
+      <div class="form-group @if($errors->has('name')) has-warning @endif">
+        {{Form::label('name', 'Name')}}
+        {{Form::text('name', null ,['class' => 'form-control', 'placeholder' => 'John Doe'])}}
+
+        @foreach($errors->get('name') as $error)
+          <span id="helpBlock2" class="help-block">{{$error}}</span>
+        @endforeach
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="you@domain.com">
+      <div class="form-group @if($errors->has('email')) has-warning @endif">
+        {{Form::label('email', 'E-Mail')}}
+        {{Form::email('email', null, ['class' => 'form-control','placeholder' => 'you@domain.com'])}}
+        @foreach($errors->get('email') as $error)
+          <span id="helpBlock2" class="help-block">{{$error}}</span>
+        @endforeach
       </div>
-      <div class="form-group">
-        <label for="phone">Phone number</label>
-        <input type="tel" class="form-control" id="phone" placeholder="+31 6 555 69 777">
+      <div class="form-group @if($errors->has('phone')) has-warning @endif">
+        {{Form::label('phone', 'Phone Number')}}
+        {{Form::tel('phone', null, ['class' => 'form-control','placeholder' => '0612345678'])}}
+        @foreach($errors->get('phone') as $error)
+          <span id="helpBlock2" class="help-block">{{$error}}</span>
+        @endforeach
       </div>
-      <div class="form-group">
-        <label for="question">Question</label>
-        <textarea class="form-control" rows="3" id="question" placeholder="How big is the universe?"></textarea>
+      <div class="form-group @if($errors->has('message')) has-warning @endif">
+        {{Form::label('message', 'Message')}}
+        @foreach($errors->get('message') as $error)
+          <span id="helpBlock2" class="help-block">{{$error}}</span>
+        @endforeach
+        {{Form::textarea('message', null, ['class' => 'form-control', 'rows' => '3','placeholder' => 'John Doe'])}}
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+      {{Form::submit('Submit', ['class' => 'btn btn-default'])}}
+    {!! Form::close() !!}
+
   </div>
 </div>
 
