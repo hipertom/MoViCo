@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Message;
 
 class messagesController extends Controller
 {
@@ -23,6 +24,17 @@ class messagesController extends Controller
       $validator = Validator::make($request->all(), $rules, $messages)->validate();;
 
 
-      return "success";
+      // create a new messages
+      $message = new Message;
+      $message->name = $request->input('name');
+      $message->email = $request->input('email');
+      $message->phone = $request->input('phone');
+      $message->message = $request->input('message');
+
+      // save messages
+      $message->save();
+
+      // Redirect
+      return redirect('/')->with('status', 'Message Sent');
     }
 }
