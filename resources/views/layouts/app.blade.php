@@ -9,7 +9,7 @@
     <body>
         @include('inc.header')
         @include('inc.navbar')
-        @include('inc.messages')
+        @include('inc.errorMessages')
 
         <div class="container">
             @yield('content')
