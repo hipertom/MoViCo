@@ -24,17 +24,25 @@ class messagesController extends Controller
       $validator = Validator::make($request->all(), $rules, $messages)->validate();;
 
 
-      // create a new messages
+      // Create a new messages
       $message = new Message;
       $message->name = $request->input('name');
       $message->email = $request->input('email');
       $message->phone = $request->input('phone');
       $message->message = $request->input('message');
 
-      // save messages
+      // Save messages
       $message->save();
 
       // Redirect
       return redirect('/')->with('messageSendSucess', 'Message Sent');
+    }
+
+    public function getMessages()
+    {
+      // Get all messages from db
+      $messages = Message::all();
+
+      return view('messages')->with('messages', $messages);
     }
 }
