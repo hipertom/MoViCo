@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectLinksTable extends Migration
+class CreateLinkTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateProjectLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_links', function (Blueprint $table) {
+        Schema::create('link_types', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('project_id')->unsigned();
-            $table->string('type_id');
-            $table->string('url');
+            $table->string('name');
 
             $table->timestamps();
         });
-
     }
 
     /**
@@ -32,6 +29,6 @@ class CreateProjectLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_links');
+        Schema::dropIfExists('link_types');
     }
 }
