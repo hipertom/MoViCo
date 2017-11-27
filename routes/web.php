@@ -11,21 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', 'ViewController@getHome');
+Route::get('/home', 'ViewController@getHome');
+Route::get('/about', 'ViewController@getAbout');
+Route::get('/contact', 'ViewController@getContact');
 
 Route::get('/messages', 'messagesController@getMessages');
 
