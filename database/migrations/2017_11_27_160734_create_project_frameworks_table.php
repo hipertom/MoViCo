@@ -16,8 +16,8 @@ class CreateProjectFrameworksTable extends Migration
         Schema::create('project_frameworks', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('project_id');
-            $table->integer('framework_id');
+            $table->unsignedInteger('project_id')->index()->nullable();
+            $table->unsignedInteger('framework_id')->index()->nullable();
 
             $table->timestamps();
         });

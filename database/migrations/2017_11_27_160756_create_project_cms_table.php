@@ -16,8 +16,8 @@ class CreateProjectCmsTable extends Migration
         Schema::create('project_cms', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('project_id');
-            $table->integer('cms_id');
+            $table->unsignedInteger('project_id')->index()->nullable();
+            $table->unsignedInteger('cms_id')->index()->nullable();
 
             $table->timestamps();
         });

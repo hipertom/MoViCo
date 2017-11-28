@@ -16,8 +16,8 @@ class CreateProjectLinksTable extends Migration
         Schema::create('project_links', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('project_id')->unsigned();
-            $table->string('type_id');
+            $table->unsignedInteger('project_id')->index()->nullable();
+            $table->unsignedInteger('type_id')->index()->nullable();
             $table->string('url');
 
             $table->timestamps();

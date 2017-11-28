@@ -16,8 +16,8 @@ class CreateProjectLanguagesTable extends Migration
         Schema::create('project_languages', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('project_id');
-            $table->integer('language_id');
+            $table->unsignedInteger('project_id')->index()->nullable();
+            $table->unsignedInteger('language_id')->index()->nullable();
 
             $table->timestamps();
         });

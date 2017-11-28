@@ -19,12 +19,8 @@ class CreateProjectsTable extends Migration
           $table->string('name');
           $table->string('image');
           $table->text('description');
-          $table->string('languages');
-          $table->string('frameworks');
-          $table->string('cms');
-          $table->integer('link');
           $table->integer('order');
-          
+
           $table->timestamps();
 
         });
