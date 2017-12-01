@@ -16,6 +16,8 @@ Route::get('/home', 'ViewController@getHome');
 Route::get('/about', 'ViewController@getAbout');
 Route::get('/contact', 'ViewController@getContact');
 
+Route::get('/projects', 'ProjectsController@getProjects');
+Route::get('/projectsjson', 'ProjectsController@json');
 Route::get('/messages', 'messagesController@getMessages');
 
 Route::post('/contact/submit', 'messagesController@submit');
