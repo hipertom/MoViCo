@@ -180,15 +180,43 @@ ul.sidebar-menu li a.active i {
 .wrapper{
   display: inline-block;
   margin-top: $height-header;
-  padding-left: 15px;
   padding-bottom: 15px;
   padding-top: 0px;
   width: 100%;
 }
-
 .main-content .row{
   margin: 0;
 }
+.content-col{
+  margin-top: 150px;
+}
+
+
+/*=============================================
+=                   dashboard                 =
+=============================================*/
+.box{
+  text-align: center;
+  border-bottom: 1px solid $col-expressed;
+  color: $col-expressed;
+  padding: 15px;
+  transition: all .2s ease-in-out;
+}
+.box:hover{
+  transform: scale(1.1);
+}
+.box span{
+  display: block;
+}
+.box span.icon i{
+  font-size: 64px;
+}
+.box span.num {
+  font-size: 28px;
+  margin-top: 15px;
+}
+
+
 
 /***********************************/
 /*              rightsidebar       */
