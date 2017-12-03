@@ -12,28 +12,28 @@
 
   <li class="">
       <a class="{{Request::is('about') ? "active" : ""}}" href="/about">
-          <i class="fa fa-dashboard"></i>
+          <i class="fa fa-user-circle-o"></i>
           <span>About</span>
       </a>
   </li>
 
   <li class="">
       <a class="{{Request::is('projects') ? "active" : ""}}" href="/projects">
-          <i class="fa fa-dashboard"></i>
+          <i class="fa fa-id-card"></i>
           <span>Projects</span>
       </a>
   </li>
 
   <li class="">
       <a class="{{Request::is('contact') ? "active" : ""}}" href="/contact">
-          <i class="fa fa-dashboard"></i>
+          <i class="fa fa-address-book"></i>
           <span>Contact</span>
       </a>
   </li>
 
   <li class="">
       <a class="{{Request::is('projectsJSON') ? "active" : ""}}" href="/projectsJSON">
-          <i class="fa fa-dashboard"></i>
+          <i class="fa fa-file-text"></i>
           <span>Project JSON</span>
       </a>
   </li>
