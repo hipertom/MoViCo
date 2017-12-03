@@ -29,7 +29,7 @@
             <div class="wrapper">
               <div class="row">
                 <!-- content -->
-                <div class="col-md-9">
+                <div class="col-md-9 content-col">
                   @yield('content')
                 </div>
 
