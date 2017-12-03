@@ -13,12 +13,12 @@ class ViewController extends Controller
 
     public function getAbout()
     {
-      return view('home');
+      return view('about');
     }
 
     public function getContact()
     {
-      return view('home');
+      return view('contact');
     }
-    
+
 }
