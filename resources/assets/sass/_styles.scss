@@ -185,9 +185,6 @@ ul.sidebar-menu li a.active i {
   padding-top: 0px;
   width: 100%;
 }
-.content-col{
-  margin-top: 150px;
-}
 
 
 /*=============================================
@@ -197,6 +194,7 @@ ul.sidebar-menu li a.active i {
   text-align: center;
   color: $col-expressed;
   transition: all $trans-time-box ease-in-out;
+  margin-top: 150px;
 }
 .box-holder span.subtext{
   position: relative;
