@@ -22,6 +22,9 @@ div.paper{
   height: 100%;
   padding: 0;
 }
+.row{
+  margin: 0; // normally -15px, but container is also 0
+}
 
 /***********************************/
 /*              links              */
@@ -111,11 +114,9 @@ aside.sidebar{
 }
 
 ul.sidebar-menu{
+  list-style-type: none;
     margin: -2px 0 0;
     padding: 0;
-}
-
-ul.sidebar-menu {
     margin-top: 15px;
 }
 
@@ -183,9 +184,6 @@ ul.sidebar-menu li a.active i {
   padding-bottom: 15px;
   padding-top: 0px;
   width: 100%;
-}
-.main-content .row{
-  margin: 0;
 }
 .content-col{
   margin-top: 150px;
