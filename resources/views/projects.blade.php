@@ -2,19 +2,42 @@
 
 @section('content')
 
-<h1>Messages</h1>
+<h1>Projects</h1>
+<div class="paper">
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Url</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      @if(count($projects) > 0)
+      @foreach($projects as $project)
+        <tr>
+              <td>{{$project->order}}</td>
+              <td>{{$project->name}}</td>
+              <td>{{ str_limit($project->description, $limit = 100, $end = '...') }}</td>
+              <td>links</td>
+              <td><span class="label label-info label-mini">{{$project->status->name}}</span></td>
+              <td>
+                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+            </td>
+        </tr>
+      @endforeach
+    @endif
+    </tbody>
+  </table>
+</div>
 
-@if(count($projects) > 0)
-  @foreach($projects as $project)
-    <div class="row">
-      <div class="col-md-12 paper">
-        <ul class="list-unstyled">
-          <li><b>Name:</b> {{$project->name}}</li>
-          <li><b>cms:</b> {{$project->cms}}</li>
-        </ul>
-      </div>
-    </div>
-  @endforeach
-@endif
+
+
+
 
 @endsection
