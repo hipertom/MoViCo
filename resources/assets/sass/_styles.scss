@@ -245,6 +245,22 @@ ul.sidebar-menu li a.active i {
   background-color: #fff;
 }
 
+.rightsidebar > section {
+  margin-top: 25px;
+}
+
+.rightsidebar h3{
+  display: block;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  background: #FF865C;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 /***********************************/
 /*              footer              */
 /***********************************/
