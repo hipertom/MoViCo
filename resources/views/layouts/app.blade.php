@@ -35,7 +35,9 @@
 
                 <!-- right sidebar -->
                 <div class="col-md-3 rightsidebar">
-                  @include('inc.rightsidebar')
+                  @section('rightsidebar')
+                    @include('inc.rightsidebar')
+                    @show
                 </div>
               </div>
             </div>
