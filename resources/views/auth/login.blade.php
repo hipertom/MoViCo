@@ -5,11 +5,12 @@
     <form class="login-form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         <h2 class="form-heading">Login</h2>
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <label for="email" class="control-label">E-Mail Address</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus> @if ($errors->has('email'))
+        
+        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+            <label for="username" class="control-label">Username</label>
+                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus> @if ($errors->has('username'))
                 <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
+                    <strong>{{ $errors->first('username') }}</strong>
                 </span>
                 @endif
         </div>
