@@ -19,11 +19,11 @@
       @if(count($projects) > 0)
       @foreach($projects as $project)
         <tr>
-              <td>{{$project->order}}</td>
-              <td>{{$project->name}}</td>
+              <td>{{ !is_null($project->order)? $project->order : "no order"  }}</td>
+              <td>{{$project->name}} image: '{{$project->image}}'</td>
               <td>{{ str_limit($project->description, $limit = 100, $end = '...') }}</td>
               <td>links</td>
-              <td><span class="label label-info label-mini">{{$project->status->name}}</span></td>
+              <td><span class="label label-info label-mini">{{ !is_null($project->status)? $project->status->name : "no status"}}</span></td>
               <td>
                 <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
