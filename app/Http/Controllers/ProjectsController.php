@@ -29,8 +29,13 @@ class ProjectsController extends Controller
       // Create a new messages
       $project = new Project;
       $project->name = $request->input('name');
-      $project->image = $request->input('image');
+      $file = $request->file('image');
+      $project->image = $file->getClientOriginalName();
       $project->description = $request->input('description');
+
+      // Move Uploaded File
+      $destinationPath = "images/uploads";
+      $file->move($destinationPath,$file->getClientOriginalName());
 
       // Save project
       $project->save();
