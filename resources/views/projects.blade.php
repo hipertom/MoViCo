@@ -36,8 +36,9 @@
   </table>
 </div>
 
+@endsection
 
-
-
-
+@section('rightsidebar')
+    @include('inc.addproject')
+    @parent
 @endsection
