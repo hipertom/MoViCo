@@ -1,8 +1,8 @@
 @extends('layouts.clean')
 
 @section('content')
-<div class="col-md-2 col-md-offset-5 login-wrapper">
-    <form class="login-form" method="POST" action="{{ route('login') }}">
+<div class="col-md-2 col-md-offset-5 clean-layout-wrapper">
+    <form class="clean-layout-form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         <h2 class="form-heading">Login</h2>
         
