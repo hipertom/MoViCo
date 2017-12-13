@@ -18,11 +18,12 @@ Route::get('/', 'ViewController@getHome');
 Route::get('/home', 'ViewController@getHome');
 Route::get('/about', 'ViewController@getAbout');
 Route::get('/contact', 'ViewController@getContact');
-Route::post('/contact/submit', 'messagesController@submit');
+
 
 // Projects
 Route::get('/projects', 'ProjectsController@getProjects');
-Route::get('/projectsJSON', 'ProjectsController@getProjectsJSON');
+Route::post('/projects/add', 'ProjectsController@addProject'); // add projects
+Route::get('/projectsJSON', 'ProjectsController@getProjectsJSON'); // json output
 
 // Messages (todo: delete)
 Route::get('/messages', 'messagesController@getMessages');
