@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
           $table->integer('order');
           $table->string('name')->unique();
           $table->text('description');
-          $table->string('image');
+          $table->string('image')->nullable();
           $table->unsignedInteger('status_id')->index()->nullable();
 
           $table->timestamps();
