@@ -31,4 +31,9 @@ class ViewController extends Controller
       return view('contact');
     }
 
+    public function getLogout()
+    {
+      return view('Auth.logout');
+    }
+
 }

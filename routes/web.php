@@ -13,16 +13,21 @@
 
 Auth::routes();
 
+// Basic pages
 Route::get('/', 'ViewController@getHome');
 Route::get('/home', 'ViewController@getHome');
 Route::get('/about', 'ViewController@getAbout');
 Route::get('/contact', 'ViewController@getContact');
-//projects
+Route::post('/contact/submit', 'messagesController@submit');
+
+// Projects
 Route::get('/projects', 'ProjectsController@getProjects');
 Route::get('/projectsJSON', 'ProjectsController@getProjectsJSON');
-//messages
+
+// Messages (todo: delete)
 Route::get('/messages', 'messagesController@getMessages');
 
-Route::post('/contact/submit', 'messagesController@submit');
+// Account stuff
+Route::get('/logout', 'ViewController@getLogout');
 
 
