@@ -1,9 +1,18 @@
 <ul class="sidebar-menu">
     
     @Auth
+    <div class="row profile-btns">
+        <div class="col-md-6 account-btn">
+                <a href="#">Account</a>
+        </div>
+        <div class="col-md-6 logout-btn">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+        </div>
+    </div>
     <p class="centered"><a href="profile.html"><img src="{{asset('images/avatars/man-2.png')}}" class="img-circle" width="60"></a></p>
     <h5 class="centered">{{ Auth::user()->name }}</h5>
-    <a class="centered" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+
     @else
     <p>error: must be logged in</p>
     @endAuth
