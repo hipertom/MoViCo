@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
-use App\Project;
 use Illuminate\Support\Facades\DB;
+use App\Project;
+use App\LinkType;
 
 class ProjectsController extends Controller
 {
@@ -52,7 +53,10 @@ class ProjectsController extends Controller
   public function getProjects()
   {
     $projects = $this->allProjects();
-    return view('projects')->with('projects', $projects);
+    $linkTypes = LinkType::get();
+    
+
+    return view('projects')->with('projects', $projects)->with('linkTypes', $linkTypes);
   }
 
   public function getProjectsJSON()

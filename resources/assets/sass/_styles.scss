@@ -284,6 +284,15 @@ ul.sidebar-menu li a.active i {
   text-transform: uppercase;
 }
 
+.add-link-table{
+  width: 100%;
+}
+.add-link-table td{
+  padding: 3px 5px;
+}
+.add-link-table tr td:first-child{padding-left: 0;}
+.add-link-table tr td:last-child{padding-left: 0;}
+
 /***********************************/
 /*              footer              */
 /***********************************/
