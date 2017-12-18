@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectLink extends Model
 {
+  protected $fillable = ['url', 'type_id'];
 
-  public function project()
+  public function type()
   {
-    return $this->belongsTo(Project::class);
+    return $this->hasOne(LinkType::class, 'id', 'type_id');
   }
 
 }
