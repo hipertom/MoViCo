@@ -62,6 +62,11 @@ class ProjectsController extends Controller
     return redirect('/')->with('messageSendSucess', "saved id =". $project->id);
   }
 
+  public function deleteProject(int $id)
+  {
+    return redirect('/')->with('messageSendSucess', "delete =". $id);
+  }
+
 
   public function getProjects()
   {
