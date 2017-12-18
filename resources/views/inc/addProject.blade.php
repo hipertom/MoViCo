@@ -20,17 +20,7 @@
             {{Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3','placeholder' => 'John Doe'])}}
         </div>
         
-        <!-- Image -->
-        <div class="form-group @if($errors->has('image')) has-warning @endif">
-        {{Form::label('image', 'Select image', ['class' => 'btn'])}}
-        {{Form::file('image', ['class' => 'hidden'])}}
-        @foreach($errors->get('image') as $error)
-            <span id="image" class="help-block">{{$error}}</span>
-        @endforeach
-        </div>
-
         <!-- Url -->
-        
         <table class="add-link-table">
             <tr>
                 <th style="width: 70%;">Url</th>
@@ -39,7 +29,7 @@
             @foreach($linkTypes as $linkType)
             <tr>
                 <td>
-                    {{Form::text($linkType->name.'Url', null ,['class' => 'form-control', 'placeholder' => 'http://'])}}
+                    {{Form::text($linkType->id.'-linktype', null ,['class' => 'form-control', 'placeholder' => 'http://'])}}
                     @foreach($errors->get('url') as $error)
                         <span id="url" class="help-block">{{$error}}</span>
                     @endforeach
@@ -53,14 +43,15 @@
             </tr>
             @endforeach
         </table>
-        
 
-        <script>
-            var content = '<div class="row add-link"><input class="form-control" placeholder="http://" name="url" type="text" id="url">';
-        </script>
-        
-        
-        
+        <!-- Image -->
+        <div class="form-group @if($errors->has('image')) has-warning @endif">
+        {{Form::label('image', 'Select image', ['class' => 'btn btn-default'])}}
+        {{Form::file('image', ['class' => 'hidden'])}}
+        @foreach($errors->get('image') as $error)
+            <span id="image" class="help-block">{{$error}}</span>
+        @endforeach
+        </div>
         
 
         <!-- submit -->
