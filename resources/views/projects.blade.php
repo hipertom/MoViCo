@@ -10,6 +10,7 @@
             <th>#</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Image</th>
             <th>Url</th>
             <th>Status</th>
             <th>Actions</th>
@@ -20,13 +21,32 @@
       @foreach($projects as $project)
         <tr>
               <td>{{ !is_null($project->order)? $project->order : "no order"  }}</td>
-              <td>{{$project->name}} image: '{{$project->image}}'</td>
+              <td>{{$project->name}}</td>
               <td>{{ str_limit($project->description, $limit = 100, $end = '...') }}</td>
+              <td>
+                <a href="#" data-toggle="modal" data-target="#{{ $project->id }}imageModal"><i class="fa fa-picture-o"></i></a>
+                <div class="modal fade" id="{{ $project->id }}imageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">{{ $project->name }} project image</h4>
+                        </div>
+                        <div class="modal-body">
+                          <img src="/images/uploads/{{ $project->image }}" alt="">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </td>
               <td>
 
               @forelse($project->links as $link)
-                <a href="{{$link->url}}" class="btn btn-success btn-xs" title="{{$link->type->name}}" target="_blank">
-                  <i class="fa fa-paper-plane"></i>
+                <a href="{{$link->url}}" class="btn btn-xs {{strtolower($link->type->name)}}-link" title="{{$link->type->name}}" target="_blank">
+                  <i class="fa"></i>
                 </a>
               @empty
                 no links
