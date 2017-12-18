@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Project;
 use App\LinkType;
+use App\ProjectLink;
 
 class ProjectsController extends Controller
 {
@@ -30,9 +31,10 @@ class ProjectsController extends Controller
 
     $validator = Validator::make($request->all(), $rules, $messages)->validate();;
 
-
-    // Create a new messages
+    // Create object
     $project = new Project;
+
+    // Save basic data
     $project->name = $request->input('name');
     $file = $request->file('image');
     $project->image = $file->getClientOriginalName();
@@ -42,11 +44,22 @@ class ProjectsController extends Controller
     $destinationPath = "images/uploads";
     $file->move($destinationPath,$file->getClientOriginalName());
 
-    // Save project
+    // Save project to database
     $project->save();
 
+    // Save links
+    $links = array();
+    $possibleLinkTypes = DB::table('link_types')->get();
+    foreach ($possibleLinkTypes as $key => $linkType) {
+      $name = $linkType->id . "-linktype";
+      if( !empty($request->$name) ){
+        array_push($links, ['url' => $request->$name, 'type_id' => $linkType->id] );
+      }
+    }
+    $project->links()->createMany($links);
+
     // Redirect
-    return redirect('/')->with('messageSendSucess', 'Message Sent');
+    return redirect('/')->with('messageSendSucess', "saved id =". $project->id);
   }
 
 
@@ -70,6 +83,7 @@ class ProjectsController extends Controller
     return Project::with('languages')->
                     with('frameworks')->
                     with('cms')->
+                    with('links')->
                     get();
   }
 }
