@@ -19,23 +19,23 @@ class AddForeignKeys extends Migration
       });
 
       Schema::table('project_links', function (Blueprint $table) {
-        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('set null');
-        $table->foreign('type_id')->references('id')->on('link_types')->onUpdate('cascade')->onDelete('set null');
+        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('type_id')->references('id')->on('link_types')->onUpdate('cascade')->onDelete('cascade');
       });
 
       Schema::table('project_languages', function (Blueprint $table) {
-        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('set null');
-        $table->foreign('language_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('set null');
+        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('language_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
       });
 
       Schema::table('project_frameworks', function (Blueprint $table) {
-        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('set null');
-        $table->foreign('framework_id')->references('id')->on('frameworks')->onUpdate('cascade')->onDelete('set null');
+        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('framework_id')->references('id')->on('frameworks')->onUpdate('cascade')->onDelete('cascade');
       });
 
       Schema::table('project_cms', function (Blueprint $table) {
-        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('set null');
-        $table->foreign('cms_id')->references('id')->on('cms')->onUpdate('cascade')->onDelete('set null');
+        $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('cms_id')->references('id')->on('cms')->onUpdate('cascade')->onDelete('cascade');
       });
     }
 
