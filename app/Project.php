@@ -28,9 +28,9 @@ class Project extends Model
         return $this->belongsTo(Status::class);
     }
 
-    /*public function links() // fetch all links associated with the project
+    public function links() // fetch all links associated with the project
     {
-      return $this->belongsToMany(Cms::class, 'project_cms');
-    }*/
+      return $this->hasMany(ProjectLink::class);
+    }
 
 }
