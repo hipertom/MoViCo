@@ -4,7 +4,7 @@
 
 <h1>Projects</h1>
 <div class="paper">
-  <table class="table table-striped">
+  <table class="projects-table table table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -34,10 +34,10 @@
               
               </td>
               <td><span class="label label-info label-mini">{{ !is_null($project->status)? $project->status->name : "no status"}}</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+              <td class="action-buttons">
+                <a href="/project/delete/{{$project->id}}" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a>
+                <a href="/project/delete/{{$project->id}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                <a href="/project/delete/{{$project->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
             </td>
         </tr>
       @endforeach
