@@ -55,9 +55,9 @@
               </td>
               <td><span class="label label-info label-mini">{{ !is_null($project->status)? $project->status->name : "no status"}}</span></td>
               <td class="action-buttons">
-                <a href="/project/delete/{{$project->id}}" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a>
-                <a href="/project/delete/{{$project->id}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                <a href="/project/delete/{{$project->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                <a href="/project/delete/{{$project->id}}" class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                <a href="/project/delete/{{$project->id}}" class="btn btn-primary btn-xs" title="Edit"><i class="fa fa-pencil"></i></a>
+                <a href="/project/delete/{{$project->id}}" class="btn btn-danger btn-xs" title="Delete" onclick="return confirm('are you sure?')"><i class="fa fa-trash-o "></i></a>
             </td>
         </tr>
       @endforeach

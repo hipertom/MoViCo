@@ -64,6 +64,7 @@ class ProjectsController extends Controller
 
   public function deleteProject(int $id)
   {
+    // todo delete post
     return redirect('/')->with('messageSendSucess', "delete =". $id);
   }
 

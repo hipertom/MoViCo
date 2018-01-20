@@ -44,6 +44,10 @@
             @endforeach
         </table>
 
+        <!-- languages -->
+        
+        asd
+
         <!-- Image -->
         <div class="form-group @if($errors->has('image')) has-warning @endif">
         {{Form::label('image', 'Select image', ['class' => 'btn btn-default'])}}

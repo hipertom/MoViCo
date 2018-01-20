@@ -1,5 +1,3 @@
-require('./bootstrap');
+import './bootstrap';
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+import './movico.js';
