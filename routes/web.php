@@ -32,9 +32,3 @@ Route::get('messages', 'messagesController@getMessages');
 
 // Account stuff
 Route::get('logout', 'ViewController@getLogout');
-
-// autocomplete
-Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
-
-
-
