@@ -21,7 +21,7 @@
         </div>
         
         <!-- Url -->
-        <table class="add-link-table">
+        <table class="add-link-table form-group">
             <tr>
                 <th style="width: 70%;">Url</th>
                 <th>Type</th>
@@ -44,13 +44,35 @@
             @endforeach
         </table>
 
-        <!-- languages -->
-        
-        <select class="js-example-basic-multiple form-control" name="states[]" multiple="multiple">
-            @foreach($languages as $language)
-                <option value="{{ $language->id }}">{{ $language->name }}</option>
-            @endforeach
-        </select>
+        {{--  languages  --}}
+        <div class="form-group">
+            <label for="sel1">Languages:</label>
+            <select class="project-select form-control" name="lang[]" multiple="multiple">
+                @foreach($languages as $language)
+                    <option value="{{ $language->id }}">{{ $language->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        {{--  languages  --}}
+        <div class="form-group">
+            <label for="sel1">Frameworks:</label>
+            <select class="project-select form-control" name="frameworks[]" multiple="multiple">
+                @foreach($frameworks as $framework)
+                    <option value="{{ $framework->id }}">{{ $framework->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        {{--  languages  --}}
+        <div class="form-group">
+            <label for="sel1">Cmses:</label>
+            <select class="project-select form-control" name="cmses[]" multiple="multiple">
+                @foreach($cmses as $cms)
+                    <option value="{{ $cms->id }}">{{ $cms->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
         <!-- Image -->
         <div class="form-group @if($errors->has('image')) has-warning @endif">

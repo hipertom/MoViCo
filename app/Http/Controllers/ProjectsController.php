@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Project;
 use App\LinkType;
 use App\ProjectLink;
+use App\Language;
+use App\Framework;
+use App\Cms;
 
 class ProjectsController extends Controller
 {
@@ -29,7 +32,7 @@ class ProjectsController extends Controller
         'required' => 'The :attribute field is required.',
     ];
 
-    $validator = Validator::make($request->all(), $rules, $messages)->validate();;
+    //$validator = Validator::make($request->all(), $rules, $messages)->validate();;
 
     // Create object
     $project = new Project;
@@ -58,6 +61,22 @@ class ProjectsController extends Controller
     }
     $project->links()->createMany($links);
 
+    // Save languages
+    $languages = $request->input('lang');
+    // todo: check for id's 
+    $project->languages()->attach($languages);
+
+    // Save frameworks
+    $frameworks = $request->input('frameworks');
+    // todo: check for id's 
+    $project->frameworks()->attach($frameworks);
+
+    // Save cmses
+    $cmses = $request->input('cmses');
+    // todo: check for id's 
+    $project->cms()->attach($cmses);
+    
+
     // Redirect
     return redirect('/')->with('messageSendSucess', "saved id =". $project->id);
   }
@@ -65,7 +84,7 @@ class ProjectsController extends Controller
   public function deleteProject(int $id)
   {
     // todo delete post
-    return redirect('/')->with('messageSendSucess', "delete =". $id);
+    return redirect('/projects')->with('messageSendSucess', "deleted =". $id);
   }
 
 
@@ -73,9 +92,16 @@ class ProjectsController extends Controller
   {
     $projects = $this->allProjects();
     $linkTypes = LinkType::get();
+    $languages = Language::get();
+    $frameworks = Framework::get();
+    $cmses = Cms::get();
     
 
-    return view('projects')->with('projects', $projects)->with('linkTypes', $linkTypes);
+    return view('projects')->with('projects', $projects)
+                           ->with('linkTypes', $linkTypes)
+                           ->with('languages', $languages)
+                           ->with('frameworks', $frameworks)
+                           ->with('cmses', $cmses);
   }
 
   public function getProjectsJSON()
