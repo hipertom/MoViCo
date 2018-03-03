@@ -106,6 +106,12 @@ class ProjectsController extends Controller
 
   public function getProjectsJSON()
   {
+    $json = $this->allProjects();
+    return view('projectsJSON')->with('projectsJSON', $json);
+  }
+
+  public function getProjectsJSONOutput()
+  {
     return $this->allProjects();
   }
 

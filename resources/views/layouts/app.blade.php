@@ -16,7 +16,7 @@
 
         @include('inc.errorMessages')
 
-        <div class="container">
+        <div class="container main">
 
           <!-- header -->
           <header class="header">

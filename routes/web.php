@@ -23,7 +23,8 @@ Route::get('contact', 'ViewController@getContact');
 // Projects
 Route::get('projects', 'ProjectsController@getProjects');
 Route::post('projects/add', 'ProjectsController@addProject'); // add projects
-Route::get('projectsJSON', 'ProjectsController@getProjectsJSON'); // json output
+Route::get('projectsJSON', 'ProjectsController@getProjectsJSON');
+Route::get('projectsJSONOutput', 'ProjectsController@getProjectsJSONOutput'); // json output
 
 Route::get('project/delete/{id}', 'ProjectsController@deleteProject')->where('id', '[0-9]+');
 
