@@ -45,8 +45,13 @@
         </table>
 
         <!-- languages -->
-        
-        asd
+        @foreach($languages as $language)
+            <div class="checkbox">
+                <label>
+                    {{Form::checkbox('lang', $language->id)}} {{$language->name}}
+                </label>
+            </div>
+        @endforeach
 
         <!-- Image -->
         <div class="form-group @if($errors->has('image')) has-warning @endif">
