@@ -45,13 +45,12 @@
         </table>
 
         <!-- languages -->
-        @foreach($languages as $language)
-            <div class="checkbox">
-                <label>
-                    {{Form::checkbox('lang', $language->id)}} {{$language->name}}
-                </label>
-            </div>
-        @endforeach
+        
+        <select class="js-example-basic-multiple form-control" name="states[]" multiple="multiple">
+            @foreach($languages as $language)
+                <option value="{{ $language->id }}">{{ $language->name }}</option>
+            @endforeach
+        </select>
 
         <!-- Image -->
         <div class="form-group @if($errors->has('image')) has-warning @endif">

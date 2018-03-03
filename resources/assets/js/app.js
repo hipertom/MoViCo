@@ -1,3 +1,3 @@
 import './bootstrap.js';
-import './typeahead.bundle.js';
+import './select2.js';
 import './movico.js';
