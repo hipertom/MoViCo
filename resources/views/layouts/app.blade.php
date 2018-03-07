@@ -8,7 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <link rel="icon" type="image/png" href="{{ url('images/icon.png') }}">
-
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
@@ -18,10 +18,10 @@
 
         <div class="container main">
 
-          <!-- header -->
+          {{--  <!-- header -->
           <header class="header">
             @include('inc.header')
-          </header>
+          </header>  --}}
 
           <!-- sidebar -->
           <aside class="sidebar" id="sidebar">
@@ -30,6 +30,13 @@
 
           <!-- main content -->
           <section class="main-content">
+              <header>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <p class="header-text"><span>Hi Tom,</span> have a nice day!</p>
+                      </div>
+                  </div>
+              </header>
             <div class="wrapper">
               <div class="row">
                 <!-- content -->

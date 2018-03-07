@@ -1,3 +1,6 @@
+<div class="sidebar-header">
+    <a href="{{ url('/') }}" class="logo">{{ config('app.name', 'Laravel') }}</a>
+</div>
 <ul class="sidebar-menu">
     
     @Auth
