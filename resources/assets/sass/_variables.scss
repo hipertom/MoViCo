@@ -1,19 +1,26 @@
 //fonts
 $fa-font-path: "/fonts";
 
-// font colors
-$col-font:#636b6f;
-$col-muted: #a7afb3;
-$col-expressed: #989898;
+// colors
+$col-main: #222642;
+$col-second: #3a97f8;
+$col-third: #ffbc00;
+$col-muted: #a2a4b0;
 $col-link: #C92F2F;
 $col-linked: #781B1B;
-$col-white: #fff;
+$col-bg: #fff;
+
+
+// old colors
+$col-font: $col-main;
+$col-expressed: $col-muted;
+$col-white: $col-bg;
 
 // element colors
-$elcol-main: #FFD777;
-$elcol-second: #424A5D;
-$elcol-third: #68DFF0;
-$elcol-bg: #F2F2F2;
+$elcol-main: $col-bg;
+$elcol-second: $col-main;
+$elcol-third: $col-second;
+$elcol-bg: $col-bg;
 
 //shadows
 $shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -23,7 +30,6 @@ $shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 //sizes
-$height-header: 60px;
 $width-sidebar: 250px;
 
 // borders
@@ -34,3 +40,7 @@ $trans-time-box: 200ms;
 
 // Clean Layout
 $login-wrapper-padding: 15px;
+
+// snippets
+$header-padding: 25px;
+$header-font-size: 1.4em;

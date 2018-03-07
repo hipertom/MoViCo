@@ -1,0 +1,64 @@
+/***********************************/
+/*          Projects table         */
+/***********************************/
+
+.projects-table {
+    td a.btn i {
+        color: white;
+    }
+    td a.btn-link i {
+        color: black;
+    }
+    a.github-link {
+        background: #4078c0;
+        border-color: #4078c0;
+        i::before {
+            content: "\f09b";
+        }
+    }
+    a.live-link {
+        background: #EA0009;
+        border-color: #EA0009;
+        i::before {
+            content: "\f1d8";
+        }
+    }
+    a.demo-link {
+        background: #6FB43F;
+        border-color: #6FB43F;
+        i::before {
+            content: "\f108";
+        }
+    }
+    .modal-body {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+
+.string {
+    color: green;
+}
+
+.number {
+    color: darkorange;
+}
+
+.boolean {
+    color: blue;
+}
+
+.null {
+    color: magenta;
+}
+
+.key {
+    color: red;
+}

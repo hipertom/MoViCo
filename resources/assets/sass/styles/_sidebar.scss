@@ -1,0 +1,93 @@
+/***********************************/
+/*              sidebar            */
+/***********************************/
+
+aside.sidebar {
+    background-color: $elcol-second;
+    width: $width-sidebar;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar h5 {
+    color: #f2f2f2;
+    font-weight: 700;
+}
+
+.sidebar .profile-btns {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-btns a {
+    background: $elcol-third;
+    color: white;
+    padding: 3px 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar ul li {
+    position: relative;
+}
+
+.nav-collapse.collapse {
+    display: inline;
+}
+
+ul.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+ul.sidebar-menu li {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ul.sidebar-menu li a span {
+    display: inline-block;
+}
+
+ul.sidebar-menu li a {
+    color: #aeb2b7;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0 15px 10px;
+    font-size: 1em;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+ul.sidebar-menu li a.active,
+ul.sidebar-menu li a:hover,
+ul.sidebar-menu li a:focus {
+    // background: $elcol-third;
+    color: #fff;
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+ul.sidebar-menu li a i {
+    font-size: 1.1em;
+    padding-right: 6px;
+
+}
+
+ul.sidebar-menu li a:hover i,
+ul.sidebar-menu li a:focus i,
+ul.sidebar-menu li a.active i {
+    color: $elcol-third;
+}

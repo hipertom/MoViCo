@@ -1,0 +1,85 @@
+/***********************************/
+/*               header            */
+/***********************************/
+.sidebar-header{
+    width: 100%;
+    padding-top: $header-padding;
+    padding-bottom: $header-padding;
+    text-align: center;
+
+    a.logo{
+        color: #fff;
+        text-transform: uppercase;
+        font-size: $header-font-size;
+        font-weight: 500;
+        letter-spacing: 3px;
+    }
+}
+
+header{
+    padding: 0 40px;
+    p.header-text{
+        padding-top: $header-padding;
+        padding-bottom: $header-padding;
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: $header-font-size;
+        color: $col-muted;
+
+        span{
+            color: $col-font;
+        }
+    }
+}
+// header {
+//     background-color: transparent;
+//     // border-bottom: $border-main;
+//     position: fixed;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     height: $height-header;
+//     padding: 0 15px;
+//     z-index: 1002;
+
+//     .sidebar-header{
+//         width: $width-sidebar;
+//     }
+// }
+
+
+
+// .sidebar-toggle-box {
+//     float: left;
+//     padding-right: 15px;
+//     margin-top: 20px;
+// }
+
+// .sidebar-toggle-box .fa-bars {
+//     cursor: pointer;
+//     display: inline-block;
+//     font-size: 20px;
+// }
+
+// a.logo {
+//     font-size: 20px;
+//     color: #ffffff;
+//     float: left;
+//     margin-top: 15px;
+//     text-transform: uppercase;
+// }
+
+// a.logo b {
+//     font-weight: 900;
+// }
+
+// a.logo:hover,
+// a.logo:focus {
+//     color: #fff;
+//     text-decoration: none;
+//     outline: none;
+// }
+
+// a.logo span {
+//     color: $elcol-third;
+// }

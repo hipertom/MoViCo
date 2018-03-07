@@ -1,0 +1,21 @@
+/***********************************/
+
+/*              links              */
+
+/***********************************/
+
+a,
+a:link,
+a:visited {
+    color: $col-link;
+    text-decoration: none;
+    &:hover,
+    &:active {
+        color: $col-linked;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}

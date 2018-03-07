@@ -1,0 +1,60 @@
+/***********************************/
+
+/*              Dashboard          */
+
+/***********************************/
+
+.box-holder {
+    text-align: center;
+    color: $col-expressed;
+    transition: all $trans-time-box ease-in-out;
+    margin-top: 150px;
+}
+
+.box-holder span.subtext {
+    position: relative;
+    top: -20px;
+}
+
+.box {
+    text-align: center;
+    color: $col-expressed;
+    border-bottom: 1px solid $col-expressed;
+    transition: border-color $trans-time-box ease-in-out;
+    padding: 15px;
+}
+
+/*----------  spans  ----------*/
+
+.box-holder span {
+    color: $col-expressed;
+    display: block;
+}
+
+.box-holder span.subtext {
+    opacity: 0;
+    transition: opacity $trans-time-box linear;
+}
+
+.box span.icon i {
+    font-size: 64px;
+}
+
+.box span.num {
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+/*----------  hover  ----------*/
+
+.box-holder:hover {
+    transform: scale(1.2);
+}
+
+.box-holder:hover .box {
+    border-color: $elcol-bg;
+}
+
+.box-holder:hover span.subtext {
+    opacity: 1;
+}

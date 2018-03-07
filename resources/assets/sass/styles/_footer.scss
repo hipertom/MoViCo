@@ -1,0 +1,18 @@
+/***********************************/
+/*              footer              */
+/***********************************/
+
+footer p {
+    text-align: center;
+    color: $col-muted;
+}
+
+@media (min-width: 768px) {
+    .navbar-collapse {
+        padding: 0;
+    }
+}
+
+.footer {
+    flex-shrink: 0;
+}

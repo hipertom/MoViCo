@@ -1,0 +1,39 @@
+/***********************************/
+/*              rightsidebar       */
+/***********************************/
+
+.rightsidebar {
+    background-color: $col-bg;
+}
+
+.rightsidebar>section {
+    margin-top: 25px;
+}
+
+.rightsidebar h3 {
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background: $col-main;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.add-link-table {
+    width: 100%;
+}
+
+.add-link-table td {
+    padding: 3px 5px;
+}
+
+.add-link-table tr td:first-child {
+    padding-left: 0;
+}
+
+.add-link-table tr td:last-child {
+    padding-left: 0;
+}
