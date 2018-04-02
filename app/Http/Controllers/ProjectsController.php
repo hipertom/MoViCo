@@ -31,7 +31,7 @@ class ProjectsController extends Controller
         'required' => 'The :attribute field is required.',
     ];
 
-    //$validator = Validator::make($request->all(), $rules, $messages)->validate();;
+    $validator = Validator::make($request->all(), $rules, $messages)->validate();;
 
     // Create object
     $project = new Project;
