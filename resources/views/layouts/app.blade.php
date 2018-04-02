@@ -18,11 +18,6 @@
 
         <div class="container main">
 
-          {{--  <!-- header -->
-          <header class="header">
-            @include('inc.header')
-          </header>  --}}
-
           <!-- sidebar -->
           <aside class="sidebar" id="sidebar">
             @include('inc.sidebar')
