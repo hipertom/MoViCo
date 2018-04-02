@@ -21,5 +21,5 @@ $laravel_version = $laravel::VERSION;
 
 <div class="hidden">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="js/app.js"></script>
+  <script src="/js/app.js"></script>
 </div>
