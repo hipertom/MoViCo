@@ -25,7 +25,7 @@ class ProjectsController extends Controller
     $rules = [
       'name' => 'required|min:2|max:255',
       'image' => 'required|file|image',
-      'description' => 'required|min:10|max:2048'
+      'description' => 'required|min:10|max:2048',
     ];
 
     $messages = [
@@ -40,12 +40,14 @@ class ProjectsController extends Controller
     // Save basic data
     $project->name = $request->input('name');
     $file = $request->file('image');
-    $project->image = $file->getClientOriginalName();
     $project->description = $request->input('description');
-
-    // Move Uploaded File
-    $destinationPath = "images/uploads";
-    $file->move($destinationPath,$file->getClientOriginalName());
+    if (!empty($file)) {
+        // Move Uploaded File
+        $destinationPath = "images/uploads";
+        $file->move($destinationPath,$file->getClientOriginalName());
+        // Save image name in project
+        $project->image = $file->getClientOriginalName();
+    }
 
     // Save project to database
     $project->save();
@@ -84,6 +86,12 @@ class ProjectsController extends Controller
   public function deleteProject(int $id)
   {
     // todo delete post
+    $project = Project::find($id);
+    if (empty($project)) {
+        return redirect('/projects');
+    }
+    $project->delete();
+    
     return redirect('/projects')->with('messageSendSucess', "deleted =". $id);
   }
 
