@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    public $test = "test";
 
     public function languages()  // fetch all languages associated with the project
     {
