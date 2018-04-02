@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,8 +15,7 @@ use App\Cms;
 class ProjectsController extends Controller
 {
   
-  
-  public function __construct() {
+    public function __construct() {
     $this->middleware('auth');
   }
   
@@ -80,19 +79,24 @@ class ProjectsController extends Controller
     
 
     // Redirect
-    return redirect('/')->with('messageSendSucess', "saved id =". $project->id);
+    return redirect('/')->with('errorMessage', "saved id =". $project->id);
   }
 
   public function deleteProject(int $id)
   {
-    // todo delete post
+    $rightPage = url()->previous() == url('projects');
+    if (!$rightPage) {
+        return redirect('/projects')->with('errorMessage', "You were redirected from the wrong url! Please try again");
+    }
+    
     $project = Project::find($id);
     if (empty($project)) {
-        return redirect('/projects');
+        return redirect('/projects')->with('errorMessage', "Project with ID {$id} does not exist!");
     }
+    
     $project->delete();
     
-    return redirect('/projects')->with('messageSendSucess', "deleted =". $id);
+    return redirect('/projects')->with('errorMessage', "Project with ID {$id} deleted!");
   }
 
 
