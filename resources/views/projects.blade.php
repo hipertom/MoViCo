@@ -2,7 +2,11 @@
 
 @section('content')
 
-<h1>Projects</h1>
+<div class="linkbar">
+    <h1>Projects</h1>
+    <a href="/projects/add">Add+</a>
+</div>
+
 <div class="paper">
   <table class="projects-table table table-striped">
     <thead>
@@ -57,7 +61,7 @@
               <td class="action-buttons">
                 <a href="#" class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
                 <a href="#" class="btn btn-primary btn-xs" title="Edit"><i class="fa fa-pencil"></i></a>
-                <a href="/project/delete/{{$project->id}}" class="btn btn-danger btn-xs" title="Delete" onclick="return confirm('are you sure?')"><i class="fa fa-trash-o "></i></a>
+                <a href="/projects/delete/{{$project->id}}" class="btn btn-danger btn-xs" title="Delete" onclick="return confirm('are you sure?')"><i class="fa fa-trash-o "></i></a>
             </td>
         </tr>
       @endforeach

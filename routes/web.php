@@ -22,11 +22,12 @@ Route::get('contact', 'ViewController@getContact');
 
 // Projects
 Route::get('projects', 'ProjectsController@getProjects');
-Route::post('projects/add', 'ProjectsController@addProject'); // add projects
+Route::get('projects/add', 'ProjectsController@getProjects'); // add project view
+Route::post('projects/add', 'ProjectsController@addProject'); // add project controller
 Route::get('projectsJSON', 'ProjectsController@getProjectsJSON');
 Route::get('projectsJSONOutput', 'ProjectsController@getProjectsJSONOutput'); // json output
 
-Route::get('project/delete/{id}', 'ProjectsController@deleteProject')->where('id', '[0-9]+');
+Route::get('projects/delete/{id}', 'ProjectsController@deleteProject')->where('id', '[0-9]+');
 
 // Messages (todo: delete)
 Route::get('messages', 'messagesController@getMessages');

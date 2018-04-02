@@ -79,7 +79,7 @@ class ProjectsController extends Controller
     
 
     // Redirect
-    return redirect('/')->with('errorMessage', "saved id =". $project->id);
+    return redirect('/projects')->with('errorMessage', "Project {$project->name} saved with ID {$project->id}");
   }
 
   public function deleteProject(int $id)
@@ -107,13 +107,23 @@ class ProjectsController extends Controller
     $languages = Language::get();
     $frameworks = Framework::get();
     $cmses = Cms::get();
+
+    switch (url()->current()) {    
+        case url('projects/add'):
+            $view = 'addProject';
+            break;
+        case url('projects'):
+        default:
+        $view = 'projects';
+            break;
+    }
     
 
-    return view('projects')->with('projects', $projects)
-                           ->with('linkTypes', $linkTypes)
-                           ->with('languages', $languages)
-                           ->with('frameworks', $frameworks)
-                           ->with('cmses', $cmses);
+    return view($view)->with('projects', $projects)
+                      ->with('linkTypes', $linkTypes)
+                      ->with('languages', $languages)
+                      ->with('frameworks', $frameworks)
+                      ->with('cmses', $cmses);
   }
 
   public function getProjectsJSON()
